@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
   def show
     @user = User.find(params[:id])
+    @microposts = @user.microposts
   end
   def edit
     @user = User.find(params[:id])
@@ -28,8 +29,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params_user)
     if @user.save
-      log_in @user
-      redirect_to @user
+      @user.send_activation_email
+      redirect_to root_url
     else
       render 'new'
     end

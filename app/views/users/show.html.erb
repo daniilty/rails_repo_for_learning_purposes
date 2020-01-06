@@ -1,4 +1,11 @@
-<% provide(:title, @user.name) %>
-<%= gravatar_for @user %>
-<%= @user.email %> <%= @user.name %>
-<%= @user.created_at %>
+<div class="current_user">
+  <% provide(:title, @user.name) %>
+  <%= gravatar_for @user %>
+  <%= @user.email %> <%= @user.name %>
+  <%= @user.created_at %>
+</div>
+<% if @user.microposts.any? %>
+  <ul class="microposts">
+    <%= render @microposts %>
+  </ul>
+<% end %>
