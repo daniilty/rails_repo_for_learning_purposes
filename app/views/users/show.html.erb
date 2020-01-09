@@ -4,8 +4,6 @@
   <%= @user.email %> <%= @user.name %>
   <%= @user.created_at %>
 </div>
-<% if @user.microposts.any? %>
-  <ul class="microposts">
-    <%= render @microposts %>
-  </ul>
-<% end %>
+<section class="micropost_feed">
+  <%= render 'shared/micropost_feed' %>
+</section>

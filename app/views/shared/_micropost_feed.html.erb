@@ -1,0 +1,5 @@
+<% if @user.microposts.any? %>
+  <ul class="microposts">
+    <%= render @microposts %>
+  </ul>
+<% end %>

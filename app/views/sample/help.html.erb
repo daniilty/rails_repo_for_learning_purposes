@@ -1,2 +1,7 @@
-<h1>You wont get ya help here so just fuck off</h1>
-
+<% if logged_in? %>
+<section class="micropost_feed">
+  <div class="micro1">
+  <%= render 'shared/micropost_feed' %>
+  </div>
+</section>
+<% end %>
